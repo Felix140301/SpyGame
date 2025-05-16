@@ -1,7 +1,7 @@
 
 'use client';
 import { title } from "process";
-import { useEffect } from "react";
+import { JSX, useEffect,useState } from "react";
 import Card from "./card";
 
 export default function Home() {
@@ -62,8 +62,15 @@ export default function Home() {
   "Prison",
   "Wedding Venue"
 ];
+
+const [cardItems, setCardItems] = useState<JSX.Element[]>([]);
+
   useEffect(() => {
-    shuffleLocation();
+    const places = shuffleLocation();
+    const cards = places.map((location, key) => (
+      <Card key={key} title={location} />
+    ));
+    setCardItems(cards);
   }, []);
 
 
@@ -83,17 +90,14 @@ function shuffleLocation(){
   console.log(order)
   return order;
 }
-  const places=shuffleLocation();
-  const cardItems = places.map( (location,key)=>(
-    <Card key={key} title={location}></Card>
-  )
-    )
+
+  
+ 
 
   return (
     <div className="relative">
       <h1 className="absolute text-6xl text-center ml-6 font-extrabold">Pick a Card</h1>
       <div className="h-dvh flex justify-center items-center">
-      
         <div className="flex justify-center items-center gap-6 flex-wrap">
           {cardItems}
         </div>
