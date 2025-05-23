@@ -98,7 +98,7 @@ function shuffleLocation(){
     <div className="relative">
       <h1 className="absolute text-6xl text-center ml-6 font-extrabold">Pick a Card</h1>
       <div className="h-dvh flex justify-center items-center">
-        <div className="flex justify-center items-center gap-6 flex-wrap">
+        <div className="flex justify-center items-center gap-6 flex-wrap max-h-2/3 overflow-y-scroll">
           {cardItems}
         </div>
       </div>

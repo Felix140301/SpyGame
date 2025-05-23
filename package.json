@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@gsap/react": "^2.1.2"
+    "@gsap/react": "^2.1.2",
+    "next": "15.1.8"
   }
 }
